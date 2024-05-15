@@ -52,7 +52,7 @@ function App() {
                       <Group h="100%" px="md">
                           <Burger opened={mobileOpened} onClick={toggleMobile} hiddenFrom="sm" size="sm" />
                           <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" />
-                          {/*<MantineLogo size={30} />*/}
+                          {/*<Logo size={30} />*/}
                       </Group>
                   </AppShell.Header>
                   <AppShell.Navbar p="md" variant="filled">
@@ -60,8 +60,8 @@ function App() {
                   </AppShell.Navbar>
                   <AppShell.Main>
                       <Routes>
-                          <Route path='/' element={<Dashboard />} />
-                          <Route path='/profile' element={<Profile />} />
+                          <Route path='/' element={<Dashboard dataService={dataService} />} />
+                          <Route path='/profile' element={<Profile dataService={dataService} />} />
                           <Route path='/badge' element={<Badge />} />
                       </Routes>
                   </AppShell.Main>
