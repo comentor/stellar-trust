@@ -8,6 +8,8 @@ import {Sidebar} from "./components/sidebar.tsx";
 import {AppShell, Burger, createTheme, Group, MantineColorsTuple, MantineProvider} from "@mantine/core";
 import {useDisclosure} from "@mantine/hooks";
 import {Profile} from "./components/profile.tsx";
+import {Insurance} from "./components/insurance.tsx";
+import {Accomodations} from "./components/accomodations.tsx";
 
 const dataService = new DataService()
 
@@ -47,6 +49,7 @@ function App() {
                       collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
                   }}
                   padding="md"
+                  display="flex"
               >
                   <AppShell.Header>
                       <Group h="100%" px="md">
@@ -61,8 +64,10 @@ function App() {
                   <AppShell.Main>
                       <Routes>
                           <Route path='/' element={<Dashboard dataService={dataService} />} />
+                          <Route path='/accommodations' element={<Accomodations />} />
                           <Route path='/profile' element={<Profile dataService={dataService} />} />
                           <Route path='/badge' element={<Badge />} />
+                          <Route path='/insurance' element={<Insurance />} />
                       </Routes>
                   </AppShell.Main>
               </AppShell>

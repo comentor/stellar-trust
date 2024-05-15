@@ -17,7 +17,7 @@ export function Dashboard({dataService}: {dataService: DataService}) {
     },[]);
 
     return <>
-        <Title mb="xl" order={2}>{`Welcome, ${userState?.firstName} ${userState?.lastName}!`}</Title>
+        <Title mb="xl" order={2}>{`Welcome, ${userState?.firstName ?? ''} ${userState?.lastName ?? ''}!`}</Title>
         <Stack>
         <Group align={"start"}>
             <StatsGroup></StatsGroup>
